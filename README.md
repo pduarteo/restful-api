@@ -49,32 +49,32 @@ POSTGRES_HOST=xxxxxxxxxxxxxxx
 ### 1. Upload from JAR (optional)
 If you want to build manually before running:
 ```bash
-  ./mvnw clean package -DskipTests
+./mvnw clean package -DskipTests
 ```
 
 ### 2. Upload containers (API + PostgreSQL)
 ```bash
-  docker compose up --build
+docker compose up --build
 ```
 
 ##### Or in the background:
 ```bash
-  docker compose up -d --build
+docker compose up -d --build
 ```
 
-### The application will be available at:
-[http://localhost:8080/api]: http://localhost:8080/api
+### The application will be available at: [http://localhost:8080/api](http://localhost:8080/api)
+
 
 
 ### 3. View logs
 ```
-    docker compose logs -f app
-    docker compose logs -f db
+docker compose logs -f app
+ docker compose logs -f db
 ```
 
 ### 4. Shut down containers
 ```bash
-  docker compose down
+docker compose down
 ```
 
 ---
@@ -86,8 +86,8 @@ If you want to build manually before running:
 
 **Headers**
 ```headers
-    Content-Type: application/vnd.pduarteo.user.v1+json
-    Accept: application/vnd.pduarteo.user.v1+json
+Content-Type: application/vnd.pduarteo.user.v1+json
+Accept: application/vnd.pduarteo.user.v1+json
 ```
 
 **Body**
