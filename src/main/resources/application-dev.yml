@@ -1,0 +1,17 @@
+server:
+  servlet:
+    context-path: /api
+  application:
+    name: restful
+spring:
+  datasource:
+    url: #xxxxxxxxxxxxxxxxx
+    username: #xxxxxxxxxxxxxxxxx
+    password: #xxxxxxxxxxxxxxxxx
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+  jackson:
+    default-property-inclusion: non_null
