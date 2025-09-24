@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "f890cf5e-59f7-42ee-8a38-e9a8cf142ca0",
+		"name": "User-API-v1",
+		"description": "Collection para testar a API RESTful de Usuários (v1).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44200780",
+		"_collection_link": "https://pedroduarte-4594829.postman.co/workspace/fe9f5c0b-5576-4610-856d-cc064c1e8ebb/collection/44200780-f890cf5e-59f7-42ee-8a38-e9a8cf142ca0?action=share&source=collection_link&creator=44200780"
+	},
+	"item": [
+		{
+			"name": "Criar Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"João Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"passwordHash\": \"S3guro@123\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/users",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/v1/users/{{user_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Pedro Duarte\",\r\n  \"email\": \"pedro.duarte@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/users/{{user_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/v1/users/{{user_id}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "{{client_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{client_id}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "{{accessTokenUrl}}",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "{{authUrl}}",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{callBackUrl}}",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "Keycloak",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "string"
+						},
+						{
+							"key": "refreshRequestParams",
+							"value": [],
+							"type": "any"
+						},
+						{
+							"key": "tokenRequestParams",
+							"value": [],
+							"type": "any"
+						},
+						{
+							"key": "authRequestParams",
+							"value": [],
+							"type": "any"
+						},
+						{
+							"key": "challengeAlgorithm",
+							"value": "S256",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/realms/rest/protocol/openid-connect/auth?response_type=code&client_id=restful&scope=openid%20profile%20email&state=aJQrMuprS1LCn6C3k_ol2j0VjnARTe1_ko-6BcTZITM%3D&redirect_uri=http://localhost:8080/api/login/oauth2/code/keycloak&nonce=OWjLGa7RvXARdo9h8seHZh1q95PonQS4PpK3GtmH3N4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"realms",
+						"rest",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_id",
+							"value": "restful"
+						},
+						{
+							"key": "scope",
+							"value": "openid%20profile%20email"
+						},
+						{
+							"key": "state",
+							"value": "aJQrMuprS1LCn6C3k_ol2j0VjnARTe1_ko-6BcTZITM%3D"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8080/api/login/oauth2/code/keycloak"
+						},
+						{
+							"key": "nonce",
+							"value": "OWjLGa7RvXARdo9h8seHZh1q95PonQS4PpK3GtmH3N4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"let json = pm.response.json()\r",
+					"pm.collectionVariables.set(\"userId\", json.id)\r",
+					"console.log(\"ID do usuário salvo:\", json.id)\r",
+					"\r",
+					"if (pm.response.code === 200) {\r",
+					"    var json = pm.response.json();\r",
+					"    // salva o access_token como variável da collection\r",
+					"    pm.collectionVariables.set(\"access_token\", json.access_token);\r",
+					"    pm.collectionVariables.set(\"refresh_token\", json.refresh_token);\r",
+					"    console.log(\"Token salvo na collection:\", json.access_token);\r",
+					"} else {\r",
+					"    console.error(\"Erro ao obter token:\", pm.response.text());\r",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		},
+		{
+			"key": "user_id",
+			"value": ""
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "client_id",
+			"value": ""
+		},
+		{
+			"key": "client_secret",
+			"value": ""
+		},
+		{
+			"key": "authUrl",
+			"value": ""
+		},
+		{
+			"key": "accessTokenUrl",
+			"value": ""
+		},
+		{
+			"key": "callBackUrl",
+			"value": ""
+		},
+		{
+			"key": "scope",
+			"value": ""
+		},
+		{
+			"key": "refresh_token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
