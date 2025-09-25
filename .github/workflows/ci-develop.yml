@@ -1,0 +1,28 @@
+name: CI Develop
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build-test-sonar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Build & Test
+        run: mvn clean verify -DskipTests
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=pduarteo_restful-api
+            -Dsonar.organization=pduarteo
+            -Dsonar.host.url=https://sonarcloud.io
+      
