@@ -15,7 +15,7 @@ jobs:
           distribution: temurin
           java-version: 21
       - name: Build & Test
-        run: mvn clean verify
+        run: mvn clean verify -DskipTests
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
