@@ -22,7 +22,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=restful-api
+            -Dsonar.projectKey=pduarteo_restful-api
             -Dsonar.organization=pduarteo
             -Dsonar.host.url=https://sonarcloud.io
       
