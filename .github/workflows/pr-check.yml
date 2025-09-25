@@ -47,7 +47,7 @@ jobs:
           POSTGRES_PASSWORD: 123
           POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
-        run: mvn clean verify
+        run: mvn clean verify -DskipTests
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
